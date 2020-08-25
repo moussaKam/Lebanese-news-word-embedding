@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>
+            {% block title %}Home Page{% endblock %}
+        </title>
+
+        <style type="text/css"> 
+          h1 { 
+              color:green; 
+          } 
+          .xyz { 
+              background-size: auto; 
+              text-align: center; 
+              padding-top: 100px; 
+          } 
+
+          .btn-circle.btn-md { 
+            background-image: url("../static/images/flag-3d-round-250.png");
+              width: 65px; 
+              height: 45px; 
+              padding: 7px 10px; 
+              border-radius: 25px; 
+              font-size: 10px; 
+              text-align: center; 
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+          } 
+          .btn-circle.btn-xl { 
+            background-image: url("../static/images/flag-3d-round-250.png");
+              width: 70px; 
+              height: 70px; 
+              padding: 10px 16px; 
+              border-radius: 35px; 
+              font-size: 12px; 
+              text-align: center; 
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+          } 
+          .bg {
+          /* The image used */
+          background-image: url('../static/images/map.png');
+          /* Full height */
+          height: 70%;
+        
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: auto;
+          /* opacity: .9; */
+          }
+          .special-card {
+
+            background-color: rgb(255, 255, 255);
+            opacity: .80;
+          }
+      </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand" href="/">Lebanon News Demo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/resources">Resources<span class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> -->
+              </ul>
+              <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form> -->
+            </div>
+          </nav>
+        
+        </nav>
+
+        <div class="bg">
+
+        {% block content %}
+        <br>
+        <div class="card mb-3 mx-auto  special-card"  special-card style="max-width: 80rem; border-radius: 25px" >
+            <div class="card-header bg-danger text-white" style="border-top-right-radius: 25px; border-top-left-radius: 25px" >Vector Word Representation For Lebanese news</div>
+            <div class="card-body">
+              <h5 class="card-title">Introducion</h5>
+              <p class="card-text">Below are a few tests for the word embeddings of the lebanese news. To see the results you have to write you input first and the press Lebanon flag. You can also just click on one of the ready-made examples and they will be filled in the form. If you want to give your own words, they must be in the vocabulary of the word vectors. Our Embeddings are trained using word2vec algorithm with window size 10, embedding size of 250 and 1.32GB of lebanese news raw text.</p>
+            
+
+              <!-- <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Choose Embeddings
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" name="embd" id="embd">
+                  <a class="dropdown-item dascim1" href="#">dascim1</a>
+                  <a class="dropdown-item dascim1" href="#">dascim2</a>
+                  <a class="dropdown-item flaubert1" href="#">flaubert1</a>
+                  <a class="dropdown-item flaubert2" href="#">flaubert2</a>
+                </div>
+              </div> -->
+
+            
+            </div>
+        </div>
+        
+      
+
+
+        <div class="card mb-3 mx-auto  special-card" style="max-width: 80rem; border-radius: 25px" >
+            <div class="card-header  bg-danger text-white" style="border-top-right-radius: 25px; border-top-left-radius: 25px" >Analogy</div>
+            <div class="card-body">
+              <h5 class="card-title">Linear relation between word vectors</h5>
+              <p class="card-text">Here we see how simple linear operations between word vectors can produce results that make sense.</p>
+              
+              <div class="input-group" style="  display: flex;
+              align-items: center;">
+                <input type="text" class="form-control" placeholder="ماكرون" id="word2" name="word2"/>
+                <span class="input-group-addon" >-</span>
+                <input type="text" class="form-control " placeholder="فرنسا" id="word1" name="word1"/>
+                <span class="input-group-addon">+</span>
+                <input name='word3' type="text" class="form-control" placeholder="اميركا" id="word3" />
+                <span class="input-group-addon"><p>&#x2192;</p></span>
+                <textarea class="span6 form-control" rows="10" placeholder="اوباما" disabled style="height:100px;" id="word4" name="word4">{{res}}</textarea>
+              </div>
+              <br>
+              <div class="input-group" style="  display: flex;
+              align-items: center;">
+              <input class="btn btn-success analogyBtn btn-circle btn-md " type="submit" value="" id='analogy' style="position: absolute; right: 0;"><br><br>
+            </div>
+<!-- 
+              <div class="card " style="border-radius: 25px">
+                <div class="card-body">
+                  Some more examples you can try:<br>
+                  <a href="#" onclick="document.getElementById('word2').value='france';document.getElementById('word1').value='paris';document.getElementById('word3').value='berlin';">france - paris + berlin</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='père';document.getElementById('word1').value='homme';document.getElementById('word3').value='femme';">père- homme + femme</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='obama';document.getElementById('word1').value='amérique';document.getElementById('word3').value='france';">obama - amérique + france</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='allumé';document.getElementById('word1').value='éteint';document.getElementById('word3').value='court';">allumé - éteint + court</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='europe';document.getElementById('word1').value='euro';document.getElementById('word3').value='dinar';">europe - euro + dinar</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='allant';document.getElementById('word1').value='aller';document.getElementById('word3').value='nager';">allant - aller + nager</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='eu';document.getElementById('word1').value='avoir';document.getElementById('word3').value='boire';">eu - avoir + boire</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='banane';document.getElementById('word1').value='bananes';document.getElementById('word3').value='couleurs';">banane - bananes + couleurs</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='allemagne';document.getElementById('word1').value='allemand';document.getElementById('word3').value='francais';">allemagne - allemand + francais</a><br>
+                  <a href="#" onclick="document.getElementById('word2').value='faisais';document.getElementById('word1').value='faire';document.getElementById('word3').value='suivre';">faisais - faire + suivre</a>
+                </div>
+              </div> -->
+
+            </div>
+        </div>
+
+
+        <div class="card mb-3 mx-auto special-card" style="max-width: 80rem; border-radius: 25px" >
+            <div class="card-header  bg-danger text-white" style="border-top-right-radius: 25px; border-top-left-radius: 25px" >Similarity Score</div>
+            <div class="card-body">
+              <h5 class="card-title">Word difference in vector space</h5>
+              <p class="card-text">The result shows how much the two input words are similar.</p>
+            
+              <div class="input-group" style="  display: flex;
+              align-items: center;">
+                <input type="text" class="form-control" placeholder="بيروت" id="sim1" name="sim1" style="max-width: 20rem;"/>
+                <span class="input-group-addon"><p>&#x2194;</p></span>
+                <input type="text" class="form-control " placeholder="طرابلس" id="sim2" name="sim2" style="max-width: 20rem;"/>
+                <span class="input-group-addon"><p>&#x2192;</p></span>
+                <input name='simscore' type="text" class="form-control" placeholder="" id="simscore" disabled style="max-width: 20rem;"/>
+                <input class="btn btn-success simScoreBtn btn-circle btn-md" type="submit" value="" id='similarityScore' style="position: absolute; right: 0;"><br><br>
+                
+              </div>
+            
+            </div>
+            
+        </div>
+
+        <div class="card mb-3 mx-auto  special-card" style="max-width: 80rem; border-radius: 25px" >
+            <div class="card-header text-white bg-danger" style="border-top-right-radius: 25px; border-top-left-radius: 25px" >Most Similar</div>
+            <div class="card-body">
+              <h5 class="card-title">Top 10 most similar words</h5>
+              <p class="card-text">The result displays the 10 closest word vectors to the input word.</p>
+            
+              <div class="input-group" style="  display: flex;
+              align-items: center;">
+                <input name='wordgoal' type="text" class="form-control" placeholder="الحريري" id="wordgoal" style="max-width: 20rem;"/>
+                <span class="input-group-addon"><p>&#x2192;</p></span>
+                <textarea class="span6 form-control" rows="10" placeholder="" disabled style="height:100px;max-width: 20rem;" id="simwords" name="simwords"></textarea>
+                <input class="btn btn-success simWordsBtn btn-circle btn-md" type="submit" value="" id='similarityWords' style="position: absolute; right: 0;"><br><br>
+              </div>
+
+            
+            </div>
+        </div>
+
+        {% endblock %}
+      </div>
+        <script src="http://code.jquery.com/jquery.js"></script>
+    
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+        <script src="{{ url_for('static', filename='queries.js') }}"></script>
+    </body>
+</html>
