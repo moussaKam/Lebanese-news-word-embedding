@@ -40,7 +40,7 @@ def analogy():
         res = res + word[0] + ', ' + str(round(word[1], 3)) + '\n'
     return jsonify({'result' : 'success', 'word_4' : res})
 
-# @app.route("/similarityscore", methods=['POST', 'GET'])
+@app.route("/similarityscore", methods=['POST', 'GET'])
 def simscore():
     sim1 = request.form['sim1']
     sim2 = request.form['sim2']
