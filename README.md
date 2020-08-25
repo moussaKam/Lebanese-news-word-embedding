@@ -1,5 +1,5 @@
 # Lebanon News Embeddings Explorer <img src="/explorer/static/images/flagbtn" alt="logo" width="25" height="25">
-Web application developed using flask to explore the word embeddings trained on the lebanes news. <br><br>
+Web application developed using flask to explore the word embeddings trained on the lebanese news. <br><br>
 
 This website has 3 different tools: <br>
 ### 1-Word analogies: 
