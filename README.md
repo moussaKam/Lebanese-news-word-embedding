@@ -13,7 +13,7 @@ this tool finds the top 10 closest words of the input according to the similarit
 ![most similar](/explorer/images/most-similar.png)
 <br><br>
 ## Guide:
-1-Clone the repos repository.<br>
+1-Clone the repository.<br>
 2-Download the word vectors <a href="https://drive.google.com/file/d/1TQO30Q396XMOx3nDOp6f4CfQuksYgjXF/view?usp=sharing">here</a> and place it in a folder called models.<br>
 3-Place the cloned repository and the folder "models" in the same path.<br>
 4-Run "run.py" in the explorer folder using python3
