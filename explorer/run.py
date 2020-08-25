@@ -6,6 +6,7 @@ from gensim.test.utils import datapath
 
 app = Flask(__name__)
 # modelw2v = gensim.models.Word2Vec.load('word2vec/dascim2.model', mmap='r')
+modelw2v = KeyedVectors.load_word2vec_format("../../models/model.bin", binary=True, limit=20000) # change to your embeddings
 
 
 @app.route("/")
@@ -75,8 +76,8 @@ def simwords():
 
 
 if __name__ == "__main__":
-    global modelw2v
-    modelw2v = KeyedVectors.load_word2vec_format("../../models/model.bin", binary=True, limit=1000000) # change to your embeddings
+    # global modelw2v
+    # modelw2v = KeyedVectors.load_word2vec_format("../../models/model.bin", binary=True, limit=5000) # change to your embeddings
     app.run(debug=True)
 
 

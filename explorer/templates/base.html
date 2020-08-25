@@ -212,9 +212,9 @@
 
         {% endblock %}
       </div>
-        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="{{ url_for('static', filename='jquery.js') }}"></script>
     
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+        <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
         <script src="{{ url_for('static', filename='queries.js') }}"></script>
     </body>
 </html>
