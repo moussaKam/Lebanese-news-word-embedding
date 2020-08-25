@@ -76,7 +76,7 @@ def simwords():
 
 if __name__ == "__main__":
     global modelw2v
-    modelw2v = KeyedVectors.load_word2vec_format("../word2vec/model.bin", binary=True, limit=1000000) # change to your embeddings
+    modelw2v = KeyedVectors.load_word2vec_format("../../models/model.bin", binary=True, limit=1000000) # change to your embeddings
     app.run(debug=True)
 
 
