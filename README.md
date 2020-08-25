@@ -1,6 +1,6 @@
-# Lebanon News Embeddings Explorer <img src="/explorer/static/images/flagbtn" alt="logo" width="25" height="25">
+# Lebanon News Embeddings Explorer <img src="/explorer/static/images/flagbtn" alt="logo" width="25" height="25" href='https://lebanesenewsembeddings.pythonanywhere.com/'>
 Web application developed using flask to explore the word embeddings trained on the lebanese news. <br><br>
-  <a href='https://lebanesenewsembeddings.pythonanywhere.com/' size="+5" style="font-size: 150px;"><font size="+2">our web application</font></a>
+  Link to the web application: <a href='https://lebanesenewsembeddings.pythonanywhere.com/' size="+5" style="font-size: 150px;"><font size="+2">https://lebanesenewsembeddings.com</font></a>
 
 This website has 3 different tools: <br>
 ### 1-Word analogies: 
