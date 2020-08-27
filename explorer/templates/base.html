@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta content='width=device-width, initial-scale=1' name='viewport' />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -50,7 +51,8 @@
       /* The image used */
       background-image: url('../static/images/map.png');
       /* Full height */
-      height: 70%;
+      height: auto;
+      width: auto;
 
       /* Center and scale the image nicely */
       background-position: center;
@@ -64,6 +66,14 @@
       background-color: rgb(255, 255, 255);
       opacity: .80;
     }
+
+    .container {
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: repeat(auto-fit, 250px 10px);
+      grid-template-rows: repeat(auto-fit, 80px);
+    }
+
   </style>
 </head>
 
@@ -78,7 +88,7 @@
 
     <div class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-      </ul>>
+      </ul>
     </div>
 
     <a href="https://github.com/moussaKam/Lebanese-news-word-embedding">
@@ -104,15 +114,14 @@
 
     {% block content %}
     <br>
-    <div class="card mb-3 mx-auto  special-card" special-card style="max-width: 80rem; border-radius: 25px">
+    <div class="card mb-3 mx-auto  special-card" special-card style="max-width: 80%; border-radius: 25px">
       <div class="card-header bg-danger text-white" style="border-top-right-radius: 25px; border-top-left-radius: 25px">
         Vector Word Representation For Lebanese news</div>
 
       <div class="card-body">
         <h5 class="card-title">Introducion</h5>
         <p class="card-text">Below are a few tests for the word embeddings of the lebanese news. To see the results you
-          have to write you input first and the press Lebanon flag. You can also just click on one of the ready-made
-          examples and they will be filled in the form. If you want to give your own words, they must be in the
+          have to write you input first and the press "submit". If you want to give your own words, they must be in the
           vocabulary of the word vectors. Our Embeddings are trained using word2vec algorithm with window size 10,
           embedding size of 250 and 1.32GB of lebanese news raw text.</p>
       </div>
@@ -121,7 +130,7 @@
 
 
 
-    <div class="card mb-3 mx-auto  special-card" style="max-width: 80rem; border-radius: 25px">
+    <div class="card mb-3 mx-auto  special-card" style="max-width: 80%; border-radius: 25px">
       <div class="card-header  bg-danger text-white"
         style="border-top-right-radius: 25px; border-top-left-radius: 25px">Analogy</div>
 
@@ -130,24 +139,25 @@
         <p class="card-text">Here we see how simple linear operations between word vectors can produce results that make
           sense.</p>
 
-        <div class="input-group" style="  display: flex;align-items: center;">
+        <div class="container" style="align-items: center; justify-content: center; ">
           <input type="text" class="form-control" placeholder="ماكرون" id="word2" name="word2" />
-          <span class="input-group-addon">-</span>
+          <span class="input-group-addon mini">-</span>
           <input type="text" class="form-control " placeholder="فرنسا" id="word1" name="word1" />
-          <span class="input-group-addon">+</span>
+          <span class="input-group-addon mini">+</span>
           <input name='word3' type="text" class="form-control" placeholder="اميركا" id="word3" />
-          <span class="input-group-addon">
+          <span class="input-group-addon mini">
             <p>&#x2192;</p>
           </span>
-          <textarea class="span6 form-control" rows="10" placeholder="اوباما" disabled style="height:100px;" id="word4"
+
+          <textarea class="form-control" rows="10" placeholder="اوباما" disabled style="height:100px;" id="word4"
             name="word4">{{res}}</textarea>
         </div>
 
         <br>
 
-        <div class="input-group" style="  display: flex; align-items: center;">
-          <input class="btn btn-success analogyBtn btn-circle btn-md " type="submit" value="" id='analogy'
-            style="position: absolute; right: 0;"><br><br>
+        <div class="input-group container" style="align-items: center; justify-content: center;">
+          <input class="btn btn-success analogyBtn" type="submit" value="submit" id='analogy'
+            ><br><br>
         </div>
 
         <!-- <div class="card " style="border-radius: 25px">
@@ -190,7 +200,7 @@
     </div>
 
 
-    <div class="card mb-3 mx-auto special-card" style="max-width: 80rem; border-radius: 25px">
+    <div class="card mb-3 mx-auto special-card" style="max-width: 80%; border-radius: 25px">
       <div class="card-header  bg-danger text-white"
         style="border-top-right-radius: 25px; border-top-left-radius: 25px">Similarity Score</div>
 
@@ -198,7 +208,7 @@
         <h5 class="card-title">Words cosine similarity in vector space</h5>
         <p class="card-text">The result shows how much the two input words are similar.</p>
 
-        <div class="input-group" style="  display: flex; align-items: center;">
+        <div class="container" style="align-items: center; justify-content: center;">
           <input type="text" class="form-control" placeholder="بيروت" id="sim1" name="sim1" style="max-width: 20rem;" />
           <span class="input-group-addon">
             <p>&#x2194;</p>
@@ -212,15 +222,14 @@
             style="max-width: 20rem;" />
         </div>
 
-        <div class="input-group" style="  display: flex; align-items: center;">
-          <input class="btn btn-success simScoreBtn btn-circle btn-md" type="submit" value="" id='similarityScore'
-            style="position: absolute; right: 0;"><br><br>
+        <div class="input-group container" style=" align-items: center; justify-content: center;">
+          <input class="btn btn-success simScoreBtn" type="submit" value="submit" id='similarityScore'><br><br>
         </div>
 
       </div>
     </div>
 
-    <div class="card mb-3 mx-auto  special-card" style="max-width: 80rem; border-radius: 25px">
+    <div class="card mb-3 mx-auto  special-card" style="max-width: 80%; border-radius: 25px">
       <div class="card-header text-white bg-danger" style="border-top-right-radius: 25px; border-top-left-radius: 25px">
         Most Similar</div>
 
@@ -228,8 +237,8 @@
         <h5 class="card-title">Top 10 most similar words</h5>
         <p class="card-text">The result displays the 10 closest word vectors to the input word.</p>
 
-        <div class="input-group" style="  display: flex; align-items: center;">
-          <input name='wordgoal' type="text" class="form-control" placeholder="الحريري" id="wordgoal"
+        <div class="container" style="align-items: center; justify-content: center;">
+          <input name='wordgoal' type="text" class="form-control" placeholder="بيت_الوسط" id="wordgoal"
             style="max-width: 20rem;" />
           <span class="input-group-addon">
             <p>&#x2192;</p>
@@ -238,9 +247,10 @@
             id="simwords" name="simwords"></textarea>
         </div>
 
-        <div class="input-group" style="  display: flex; align-items: center;">
-          <input class="btn btn-success simWordsBtn btn-circle btn-md" type="submit" value="" id='similarityWords'
-            style="position: absolute; right: 0;"><br><br>
+        <div class="input-group container" style="align-items: center; justify-content: center;">
+          <input class="btn btn-success simWordsBtn" type="submit" value="submit" id='similarityWords'>
+            <!-- style="position: absolute; right: 4%;"  didplay:flex> -->
+            <br><br>
         </div>
 
       </div>
@@ -251,7 +261,7 @@
   </div>
   <script src="{{ url_for('static', filename='jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
-  <script src="{{ url_for('static', filename='queries.js') }}"></script>
+  <script src="{{ url_for('static', filename='querie.js') }}"></script>
 </body>
 
 </html>
